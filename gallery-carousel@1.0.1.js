@@ -10,6 +10,15 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
+  const makeImagesEager = () => {
+    const lazyImages = document.querySelectorAll('.gallery-runway img[loading="lazy"]');
+    for (let i = 0; i < lazyImages.length && i < 3; i++) {
+      lazyImages[i].setAttribute('loading', 'eager');
+    }
+  };
+
+  makeImagesEager();
+
   function slideGallery(direction) {
     const galleryWrap = galleryRunway.closest('.gallery');
     if (galleryWrap && galleryWrap.classList.contains('full-screen')) return;
