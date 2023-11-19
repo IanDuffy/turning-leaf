@@ -12,8 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const makeImagesEager = () => {
     const lazyImages = document.querySelectorAll('.gallery-runway img[loading="lazy"]');
-    for (let i = 0; i < lazyImages.length && i < 3; i++) {
-      lazyImages[i].setAttribute('loading', 'eager');
+
+    if(lazyImages.length > 0) {
+      lazyImages[0].setAttribute('loading', 'eager'); 
+    }
+    if(lazyImages.length > 2) {
+      lazyImages[2].setAttribute('loading', 'eager'); 
     }
   };
 
